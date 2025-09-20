@@ -1,0 +1,50 @@
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+
+# Ignore build artifacts
+build/
+dist/
+*.so
+
+# Ignore virtual environments
+.venv/
+venv/
+env/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore git metadata
+.git/
+.gitignore
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+
+# Ignore test and temp files
+*.log
+*.tmp
+*.swp
+*.bak
+
+# Ignore large data or model files if not needed inside image
+*.pt
+*.bin
+*.h5
+*.onnx
+*.pkl
+*.joblib
+*.npy
+*.npz
+
+# Ignore local configs/secrets (don’t bake into image)
+.env
+*.db

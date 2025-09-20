@@ -1,0 +1,27 @@
+services:
+  flask:
+    build:
+      context: .
+      dockerfile: Dockerfile.flask
+    container_name: flask-rag
+    ports:
+      - "5004:5004"
+    volumes:
+      - .:/app
+    depends_on:
+      - postgres
+    environment:
+      POSTGRES_USER: api
+      POSTGRES_PASSWORD: api
+      POSTGRES_DB: langapi
+      GEMINI_API_KEY: "AIzaSyC04Q4f4PS2beIYn5FuesJtyCu4G8_lH-g"
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: api-con
+    environment:
+      POSTGRES_USER: api
+      POSTGRES_PASSWORD: api
+      POSTGRES_DB: langapi
+    ports:
+      - "6020:5432"
